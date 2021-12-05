@@ -13,6 +13,7 @@ section#hero {
 
 section#hero article:first-child {
   width: 40%;
+  padding-right: 10px;
 }
 
 
