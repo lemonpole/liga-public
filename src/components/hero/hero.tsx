@@ -27,8 +27,8 @@ export default function Hero() {
           <b>{'game.'}</b>
         </h1>
         <button className="small-caps lower" onClick={() => window.open( download_info )}>
-          <span>{!! download_info ? 'Download LIGA Esports Manager' : 'Loading...'}</span>
-          <small className="upper">{releaseInfo?.name || 'Loading...'}</small>
+          <span>{!! download_info ? 'Download Installer' : 'Loading...'}</span>
+          <small className="upper">{( releaseInfo?.name || 'Loading...' ).replace( 'v', '' )}</small>
         </button>
         <h2>
           <span>{'or see '}</span>
