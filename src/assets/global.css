@@ -1,0 +1,105 @@
+/**
+ * GENERAL STYLES
+**/
+
+* {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+
+html, body {
+  background-color: var(--background-color);
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 3em;
+  text-align: center;
+}
+
+
+a {
+  color: var(--links-color);
+  cursor: pointer;
+}
+
+
+button {
+  background-color: var(--links-color);
+  padding: 20px 60px;
+  border: 0px;
+  color: var(--font-color-light);
+  font-size: 1.5em;
+}
+
+
+button, button > * {
+  cursor: pointer;
+}
+
+
+button > small {
+  display: block;
+  padding-top: 5px;
+  font-weight: normal;
+  font-size: .5em;
+}
+
+
+img {
+  transition: filter 0.3s ease-out;
+}
+
+
+/**
+ * UTILITY STYLES
+**/
+
+.blur {
+  filter: blur( 20px );
+  /* clip-path: inset( 0 ); */
+}
+
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+
+.upper {
+  text-transform: uppercase;
+}
+
+
+.lower {
+  text-transform: lowercase;
+}
+
+
+/**
+ * THEME DEFINITIONS
+ *
+ * Main: https://coolors.co/22223b-4a4e69-9a8c98-c9ada7-f2e9e4
+ * Shades: https://coolors.co/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529
+**/
+
+:root {
+  --accent-1: #22223B;
+  --accent-2: #4A4E69;
+  --accent-3: #9A8C98;
+  --background-color: #F8F9FA;
+  --foreground-color: #E9ECEF;
+  --font-color: #6C757D;
+  --font-color-light: #CED4DA;
+  --border-color: #ADB5BD;
+  --links-color: #2a9d8f;
+}

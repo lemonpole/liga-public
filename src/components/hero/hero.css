@@ -1,0 +1,40 @@
+section#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-1);
+  width: 100%;
+  height: 100vh;
+  padding-top: 120px;
+  color: var(--font-color-light);
+  text-align: center;
+}
+
+
+section#hero article:first-child {
+  width: 40%;
+}
+
+
+section#hero article + article {
+  width: 50%;
+  height: 100%;
+}
+
+
+section#hero h1 {
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+
+section#hero h2 {
+  font-size: 1.25em;
+  font-weight: 100;
+}
+
+
+section#hero img {
+  width: 100%;
+  height: auto;
+}
