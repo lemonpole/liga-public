@@ -1,13 +1,9 @@
 import React from 'react';
-import heroImg from 'assets/hero.png';
-import heroImgTiny from 'assets/hero.tiny.png';
-import useProgressiveImg from 'hooks/progressive-image';
 import { Github } from 'api';
 import './hero.css';
 
 
 export default function Hero() {
-  const [ src, { blur }] = useProgressiveImg( heroImgTiny, heroImg );
   const [ releaseInfo, setReleaseInfo ] = React.useState<Github.ReleaseResponse>();
 
   React.useEffect( () => {
@@ -42,11 +38,12 @@ export default function Hero() {
         </h3>
       </article>
       <article>
-        <img
-          src={src}
-          alt={'LIGA Esports Manager'}
-          className={blur ? 'blur' : ''}
-        />
+        <video autoPlay muted loop>
+          <source
+            src={process.env.PUBLIC_URL + '/demo.mp4'}
+            type="video/mp4"
+          />
+        </video>
       </article>
     </section>
   );

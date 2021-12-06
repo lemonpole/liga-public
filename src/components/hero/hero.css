@@ -33,7 +33,7 @@ section#hero h3 {
 }
 
 
-section#hero img {
+section#hero img, section#hero video {
   width: 100%;
   height: auto;
 }
