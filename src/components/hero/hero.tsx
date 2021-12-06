@@ -30,7 +30,7 @@ export default function Hero() {
           <span>{!! download_info ? 'Download Installer' : 'Loading...'}</span>
           <small className="upper">{( releaseInfo?.name || 'Loading...' ).replace( 'v', '' )}</small>
         </button>
-        <h2>
+        <h3>
           <span>{'or see '}</span>
           <a
             href={[ Github.API.publicBaseUrl, 'lemonpole/liga-public/releases' ].join( '/' )}
@@ -39,7 +39,7 @@ export default function Hero() {
           >
             {'all releases.'}
           </a>
-        </h2>
+        </h3>
       </article>
       <article>
         <img

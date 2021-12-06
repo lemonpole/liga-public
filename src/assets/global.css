@@ -14,7 +14,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: var(--font-color);
 }
 
@@ -27,9 +27,21 @@ h1 {
 }
 
 
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.75em;
+}
+
+
 a {
   color: var(--links-color);
   cursor: pointer;
+}
+
+
+p {
+  line-height: 2em;
 }
 
 
@@ -82,6 +94,46 @@ img {
 
 .lower {
   text-transform: lowercase;
+}
+
+
+/**
+ * FEATURE COMPONENT
+ */
+
+.feature-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--foreground-color);
+  height: 75vh;
+  padding: 60px 0;
+}
+
+
+.feature-container:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+
+.feature-container article {
+  width: 40%;
+}
+
+
+.feature-container article.info {
+  padding: 0 10%;
+}
+
+
+.feature-container article.info > p {
+  text-align: justify;
+}
+
+
+.feature-container img {
+  width: 100%;
+  height: auto;
 }
 
 
