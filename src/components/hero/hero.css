@@ -19,7 +19,6 @@ section#hero article:first-child {
 
 section#hero article + article {
   width: 50%;
-  height: 100%;
 }
 
 
