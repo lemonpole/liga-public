@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/liga-public/static/css/main.48cb5b44.chunk.css",
+    "main.css": "/liga-public/static/css/main.295a90ba.chunk.css",
     "main.js": "/liga-public/static/js/main.365cb365.chunk.js",
     "main.js.map": "/liga-public/static/js/main.365cb365.chunk.js.map",
     "runtime-main.js": "/liga-public/static/js/runtime-main.38081426.js",
@@ -8,7 +8,7 @@
     "static/js/2.d6b7a550.chunk.js": "/liga-public/static/js/2.d6b7a550.chunk.js",
     "static/js/2.d6b7a550.chunk.js.map": "/liga-public/static/js/2.d6b7a550.chunk.js.map",
     "index.html": "/liga-public/index.html",
-    "static/css/main.48cb5b44.chunk.css.map": "/liga-public/static/css/main.48cb5b44.chunk.css.map",
+    "static/css/main.295a90ba.chunk.css.map": "/liga-public/static/css/main.295a90ba.chunk.css.map",
     "static/js/2.d6b7a550.chunk.js.LICENSE.txt": "/liga-public/static/js/2.d6b7a550.chunk.js.LICENSE.txt",
     "static/media/hero.6e06489b.png": "/liga-public/static/media/hero.6e06489b.png",
     "static/media/logo.2e8857af.png": "/liga-public/static/media/logo.2e8857af.png",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.38081426.js",
     "static/js/2.d6b7a550.chunk.js",
-    "static/css/main.48cb5b44.chunk.css",
+    "static/css/main.295a90ba.chunk.css",
     "static/js/main.365cb365.chunk.js"
   ]
 }
