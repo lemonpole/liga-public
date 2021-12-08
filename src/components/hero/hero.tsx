@@ -19,8 +19,8 @@ export default function Hero() {
     <section id="hero">
       <article>
         <h1 className="small-caps lower">
-          <span>{'The esports simulator that puts you in the '}</span>
-          <b>{'game.'}</b>
+          <span>{'The CS:GO esports sim that puts you in the'}</span><br />
+          <b className="glownote">{'game.'}</b>
         </h1>
         <button className="small-caps lower" onClick={() => window.open( download_info )}>
           <span>{!! download_info ? 'Download Installer' : 'Loading...'}</span>

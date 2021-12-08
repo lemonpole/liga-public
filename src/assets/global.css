@@ -97,6 +97,11 @@ img {
 }
 
 
+.glownote {
+  text-shadow: 0 0 1rem var(--accent-3);
+}
+
+
 /**
  * THEME DEFINITIONS
  *
