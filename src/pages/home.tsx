@@ -1,5 +1,7 @@
 import Hero from 'components/hero/hero';
 import Billboard from 'components/billboard';
+import matchImg from 'assets/match.png';
+import matchImgTiny from 'assets/match.tiny.png';
 import squadImg from 'assets/squad.png';
 import squadImgTiny from 'assets/squad.tiny.png';
 import sellImg from 'assets/sell.png';
@@ -10,6 +12,17 @@ export default function Home() {
   return (
     <div id="home">
       <Hero />
+
+      <Billboard
+        title={'Play your matches'}
+        imgTiny={matchImgTiny}
+        img={matchImg}
+      >
+        {`
+          LIGA Esports Manager (LESM) launches CS:GO with bots, team names,
+          logos and more for a more immersive simulation experience.
+        `}
+      </Billboard>
 
       <Billboard
         title={'Manage your squad'}
