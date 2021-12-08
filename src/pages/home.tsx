@@ -25,6 +25,7 @@ export default function Home() {
       </Billboard>
 
       <Billboard
+        reverse
         title={'Manage your squad'}
         imgTiny={squadImgTiny}
         img={squadImg}
@@ -38,7 +39,6 @@ export default function Home() {
       </Billboard>
 
       <Billboard
-        reverse
         title={'Trade players'}
         imgTiny={sellImgTiny}
         img={sellImg}
