@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "deploy": "npx gh-pages -d build",
+    "deploy": "npx gh-pages -d build -m \"$(git log -1 --pretty=%B)\"",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "start": "react-scripts start",
