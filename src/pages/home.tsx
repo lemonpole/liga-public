@@ -14,36 +14,38 @@ export default function Home() {
       <Hero />
 
       <Billboard
-        title={'Play your matches'}
+        title={'In-game mode.'}
         imgTiny={matchImgTiny}
         img={matchImg}
       >
         {`
-          LIGA Esports Manager (LESM) launches CS:GO with bots, team names,
-          logos and more for a more immersive simulation experience.
+          Championship final? Don't leave it up to chance. Hop in the game and
+          take full control for an incredibly immersive esports experience.
         `}
       </Billboard>
 
       <Billboard
         reverse
-        title={'Manage your squad'}
+        title={'Manage your squad.'}
         imgTiny={squadImgTiny}
         img={squadImg}
       >
         {`
-          Your squad's stats will directly
-          affect their in-game attributes.
+          You'll need a good squad on your road to glory.
 
-          Train your squad to gain an edge!
+          Build and train your squad to gain an edge when you're battling
+          it out in-game or simply simming matches.
         `}
       </Billboard>
 
       <Billboard
-        title={'Trade players'}
+        title={'Trade players.'}
         imgTiny={sellImgTiny}
         img={sellImg}
       >
-        {'Via an active transfer market you will be able to send or reject offers with other teams.'}
+        {`
+          As you move up through the ranks you'll be able to trade for better players in an in-depth transfer market.
+        `}
       </Billboard>
     </div>
   );
