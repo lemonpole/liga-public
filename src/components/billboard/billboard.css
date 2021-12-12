@@ -28,6 +28,11 @@
 }
 
 
+.billboard article.full {
+  width: 60%;
+}
+
+
 .billboard img {
   width: 100%;
   height: auto;
