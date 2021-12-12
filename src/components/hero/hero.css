@@ -36,6 +36,4 @@ section#hero h3 {
 section#hero img, section#hero video {
   width: 100%;
   height: auto;
-  box-shadow: 0 0 0.25rem var(--accent-3);
-  border: 1px solid var(--accent-3);
 }

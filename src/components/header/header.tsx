@@ -23,7 +23,7 @@ export default function Header() {
       <nav>
         <ul>
           <li className="active small-caps lower"><a href="/">{'Home'}</a></li>
-          <li className="glownote small-caps lower"><a href="/">{'About'}</a></li>
+          <li className="glownote small-caps lower"><a href="/">{'Features'}</a></li>
           <li className="glownote small-caps lower"><a href="/">{'Support'}</a></li>
         </ul>
       </nav>

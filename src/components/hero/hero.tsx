@@ -40,7 +40,7 @@ export default function Hero() {
         </h3>
       </article>
       <article>
-        <video autoPlay muted loop>
+        <video autoPlay muted loop className="glow">
           <source
             src={process.env.PUBLIC_URL + '/demo.mp4'}
             type="video/mp4"

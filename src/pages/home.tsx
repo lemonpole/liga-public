@@ -47,6 +47,31 @@ export default function Home() {
           As you move up through the ranks you'll be able to trade for better players in an in-depth transfer market.
         `}
       </Billboard>
+
+      <section className="billboard">
+        <article>
+          <h2>{'What is this?'}</h2>
+          <p>
+            {`
+              There are many CS:GO Esports Simulators out there,
+              LESM is the only one that puts you in the game.
+
+              This is how it works:
+            `}
+          </p>
+          <ol>
+            <li>{'LESM will launch a local CS:GO server.'}</li>
+            <li>{'Your teammates and opponents are added to the server as bots.'}</li>
+            <li>{'You type '}<code>{'.ready '}</code>{'in chat to start the match.'}</li>
+            <li>{'Once the match is over, LESM will save the results.'}</li>
+          </ol>
+          <img
+            src="https://i.imgur.com/aoccxF2.jpeg"
+            alt="CS:GO screenshot of the scoreboard"
+            className="glow"
+          />
+        </article>
+      </section>
     </div>
   );
 }
