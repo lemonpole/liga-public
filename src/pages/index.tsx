@@ -1,3 +1,5 @@
 import './pages.css';
 import Home from './home';
-export { Home };
+import Features from './features';
+
+export { Home, Features };

@@ -52,28 +52,6 @@ export default function Home() {
           `}
         </p>
       </Billboard>
-
-      <Billboard title={'What is this?'}>
-        <p>
-          {`
-            There are many CS:GO Esports Simulators out there,
-            but LESM is the only one that puts you in the game.
-
-            This is how it works:
-          `}
-        </p>
-        <ol>
-          <li>{'LESM will launch a local CS:GO server.'}</li>
-          <li>{'Your teammates and opponents are added to the server as bots.'}</li>
-          <li>{'You type '}<code>{'.ready '}</code>{'in chat to start the match.'}</li>
-          <li>{'Once the match is over, LESM will save the results.'}</li>
-        </ol>
-        <img
-          src="https://i.imgur.com/aoccxF2.jpeg"
-          alt="CS:GO screenshot of the scoreboard"
-          className="glow"
-        />
-      </Billboard>
     </div>
   );
 }

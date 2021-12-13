@@ -25,7 +25,7 @@ function BillboardImage( props: BillboardImageProps ) {
     <img
       src={imgSrc}
       alt={props.imgLabel || 'LIGA Esports Manager'}
-      className={imgBlur ? 'blur' : ''}
+      className={imgBlur ? 'blur' : 'glow'}
     />
   );
 }

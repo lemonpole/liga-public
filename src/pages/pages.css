@@ -1,1 +1,13 @@
-/* silence is golden... */
+#features {
+  padding-top: var(--header-height);
+}
+
+
+#features h1 {
+  text-align: left;
+}
+
+
+#features .feature-item {
+  padding: 0 20%;
+}
