@@ -23,7 +23,7 @@ function ScrollToTop( props: { children: React.ReactNode }) {
 
 function Index() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop>
         <Header />
         <Routes>
