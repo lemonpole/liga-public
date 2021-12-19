@@ -1,3 +1,7 @@
+/**
+ * COMPONENT STYLES
+**/
+
 section#hero {
   display: flex;
   align-items: center;
@@ -36,4 +40,25 @@ section#hero h3 {
 section#hero img, section#hero video {
   width: 100%;
   height: auto;
+}
+
+
+/**
+ * MOBILE STYLES
+ *
+ * @note: cannot use css variables as media query values :(
+**/
+
+@media only screen and (max-width: 1024px) {
+  section#hero {
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  section#hero article,
+  section#hero article:first-child,
+  section#hero article + article {
+    width: 100%;
+  }
 }

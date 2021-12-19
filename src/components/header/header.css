@@ -78,6 +78,8 @@ header div.hamburger-react {
 
 /**
  * MOBILE STYLES
+ *
+ * @note: cannot use css variables as media query values :(
 **/
 
 @media only screen and (max-width: 1024px) {

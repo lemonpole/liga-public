@@ -126,3 +126,24 @@ img {
   --border-color: #ADB5BD;
   --links-color: #2a9d8f;
 }
+
+
+/**
+ * MOBILE STYLES
+ *
+ * @note: cannot use css variables as media query values :(
+**/
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 1.25em;
+  }
+}

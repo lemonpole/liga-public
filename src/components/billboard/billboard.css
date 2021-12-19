@@ -1,3 +1,7 @@
+/**
+ * COMPONENT STYLES
+**/
+
 .billboard {
   display: flex;
   justify-content: center;
@@ -36,4 +40,28 @@
 .billboard img {
   width: 100%;
   height: auto;
+}
+
+
+/**
+ * MOBILE STYLES
+ *
+ * @note: cannot use css variables as media query values :(
+**/
+
+@media only screen and (max-width: 1024px) {
+  .billboard {
+    flex-direction: column;
+  }
+
+
+  .billboard article, .billboard article.full {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+
+  .billboard article + article {
+    margin-top: 20px;
+  }
 }
