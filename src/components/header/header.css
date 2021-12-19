@@ -69,3 +69,42 @@ header li.active {
   color: var(--links-color);
   border-bottom-color: var(--links-color);
 }
+
+
+header div.hamburger-react {
+  display: none;
+}
+
+
+/**
+ * MOBILE STYLES
+**/
+
+@media only screen and (max-width: 1024px) {
+  header ul {
+    display: none;
+  }
+
+
+  header ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    background-color: var(--accent-1);
+    height: 100vh;
+  }
+
+
+  header li, header li.active {
+    border-bottom-color: var(--accent-2);
+    border-bottom-width: 1px;
+  }
+
+
+  header div.hamburger-react {
+    display: block;
+    align-self: center;
+    margin-right: 5px;
+  }
+}
