@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from 'components/header';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import * as Pages from 'pages';
 import 'assets/global.css';
 
@@ -22,8 +22,12 @@ function ScrollToTop( props: { children: React.ReactNode }) {
 
 
 function Index() {
+  const basename = !!process.env.NODE_ENV && process.env.NODE_ENV === 'production'
+    ? process.env.PUBLIC_URL
+    : '/'
+  ;
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={basename}>
       <ScrollToTop>
         <Header />
         <Routes>
@@ -31,7 +35,7 @@ function Index() {
           <Route path="/features" element={<Pages.Features />} />
         </Routes>
       </ScrollToTop>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
