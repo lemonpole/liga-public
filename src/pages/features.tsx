@@ -1,6 +1,8 @@
 import Billboard from "components/billboard";
 import spectatorImg from 'assets/spectator.jpg';
 import spectatorImgTiny from 'assets/spectator.tiny.jpg';
+import cs16Img from 'assets/cs16.png';
+import cs16ImgTiny from 'assets/cs16.tiny.png';
 
 
 export default function Features() {
@@ -36,6 +38,21 @@ export default function Features() {
 
           The server name will also reflect the league or
           tournament that you are actively competing in.
+        `}</p>
+      </Billboard>
+
+      <Billboard
+        title={'CS 1.6 Support.'}
+        img={cs16Img}
+        imgTiny={cs16ImgTiny}
+      >
+        <p>{`
+          If you're feeling nostalgic, you can play all of your matches in CS 1.6.
+
+          In this mode, LESM has more control of the game server so you'll get
+          a customized MOTD, an LO3 config that's executed when you ready up
+          and dynamic fake bot pings which will bring you back to the glory
+          days of CS 1.6.
         `}</p>
       </Billboard>
     </div>
