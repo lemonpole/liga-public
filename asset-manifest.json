@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/liga-public/static/css/main.6e786532.chunk.css",
+    "main.css": "/liga-public/static/css/main.fe3c720d.chunk.css",
     "main.js": "/liga-public/static/js/main.bdfe2658.chunk.js",
     "main.js.map": "/liga-public/static/js/main.bdfe2658.chunk.js.map",
     "runtime-main.js": "/liga-public/static/js/runtime-main.38081426.js",
@@ -8,7 +8,7 @@
     "static/js/2.ed48bd4b.chunk.js": "/liga-public/static/js/2.ed48bd4b.chunk.js",
     "static/js/2.ed48bd4b.chunk.js.map": "/liga-public/static/js/2.ed48bd4b.chunk.js.map",
     "index.html": "/liga-public/index.html",
-    "static/css/main.6e786532.chunk.css.map": "/liga-public/static/css/main.6e786532.chunk.css.map",
+    "static/css/main.fe3c720d.chunk.css.map": "/liga-public/static/css/main.fe3c720d.chunk.css.map",
     "static/js/2.ed48bd4b.chunk.js.LICENSE.txt": "/liga-public/static/js/2.ed48bd4b.chunk.js.LICENSE.txt",
     "static/media/cs16.bcd59d34.png": "/liga-public/static/media/cs16.bcd59d34.png",
     "static/media/logo.2e8857af.png": "/liga-public/static/media/logo.2e8857af.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.38081426.js",
     "static/js/2.ed48bd4b.chunk.js",
-    "static/css/main.6e786532.chunk.css",
+    "static/css/main.fe3c720d.chunk.css",
     "static/js/main.bdfe2658.chunk.js"
   ]
 }
