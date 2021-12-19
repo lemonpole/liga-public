@@ -22,12 +22,8 @@ function ScrollToTop( props: { children: React.ReactNode }) {
 
 
 function Index() {
-  const basename = !!process.env.NODE_ENV && process.env.NODE_ENV === 'production'
-    ? process.env.PUBLIC_URL
-    : '/'
-  ;
   return (
-    <HashRouter basename={basename}>
+    <HashRouter>
       <ScrollToTop>
         <Header />
         <Routes>
