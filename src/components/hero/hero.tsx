@@ -17,6 +17,7 @@ export default function Hero() {
   }, []);
 
   const download_info = Github.API.getDownloadLink( releaseInfo?.assets || [] );
+  console.log( releaseInfo?.name );
   return (
     <section id="hero">
       <article>
@@ -26,7 +27,7 @@ export default function Hero() {
         </h1>
         <button className="small-caps lower" onClick={() => window.open( download_info )}>
           <span>{!! download_info ? 'Download Installer' : loading ? 'Loading...' : 'Download'}</span>
-          <small className="upper">{( releaseInfo?.name || loading ? 'Loading...' : 'Coming soon').replace( 'v', '' )}</small>
+          <small className="upper">{( releaseInfo?.name || ( loading ? 'Loading...' : 'Coming soon' )).replace( 'v', '' )}</small>
         </button>
         <h3>
           <span>{'or see '}</span>
