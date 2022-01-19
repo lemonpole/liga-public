@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/liga-public/static/css/main.fe3c720d.chunk.css",
-    "main.js": "/liga-public/static/js/main.bdfe2658.chunk.js",
-    "main.js.map": "/liga-public/static/js/main.bdfe2658.chunk.js.map",
+    "main.js": "/liga-public/static/js/main.aded69e5.chunk.js",
+    "main.js.map": "/liga-public/static/js/main.aded69e5.chunk.js.map",
     "runtime-main.js": "/liga-public/static/js/runtime-main.38081426.js",
     "runtime-main.js.map": "/liga-public/static/js/runtime-main.38081426.js.map",
     "static/js/2.ed48bd4b.chunk.js": "/liga-public/static/js/2.ed48bd4b.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.38081426.js",
     "static/js/2.ed48bd4b.chunk.js",
     "static/css/main.fe3c720d.chunk.css",
-    "static/js/main.bdfe2658.chunk.js"
+    "static/js/main.aded69e5.chunk.js"
   ]
 }
