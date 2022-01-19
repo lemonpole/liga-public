@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/liga-public/static/css/main.fe3c720d.chunk.css",
-    "main.js": "/liga-public/static/js/main.aded69e5.chunk.js",
-    "main.js.map": "/liga-public/static/js/main.aded69e5.chunk.js.map",
+    "main.js": "/liga-public/static/js/main.92c708c6.chunk.js",
+    "main.js.map": "/liga-public/static/js/main.92c708c6.chunk.js.map",
     "runtime-main.js": "/liga-public/static/js/runtime-main.38081426.js",
     "runtime-main.js.map": "/liga-public/static/js/runtime-main.38081426.js.map",
-    "static/js/2.ed48bd4b.chunk.js": "/liga-public/static/js/2.ed48bd4b.chunk.js",
-    "static/js/2.ed48bd4b.chunk.js.map": "/liga-public/static/js/2.ed48bd4b.chunk.js.map",
+    "static/js/2.580aca2f.chunk.js": "/liga-public/static/js/2.580aca2f.chunk.js",
+    "static/js/2.580aca2f.chunk.js.map": "/liga-public/static/js/2.580aca2f.chunk.js.map",
     "index.html": "/liga-public/index.html",
     "static/css/main.fe3c720d.chunk.css.map": "/liga-public/static/css/main.fe3c720d.chunk.css.map",
-    "static/js/2.ed48bd4b.chunk.js.LICENSE.txt": "/liga-public/static/js/2.ed48bd4b.chunk.js.LICENSE.txt",
+    "static/js/2.580aca2f.chunk.js.LICENSE.txt": "/liga-public/static/js/2.580aca2f.chunk.js.LICENSE.txt",
     "static/media/cs16.bcd59d34.png": "/liga-public/static/media/cs16.bcd59d34.png",
     "static/media/logo.2e8857af.png": "/liga-public/static/media/logo.2e8857af.png",
     "static/media/match.6e06489b.png": "/liga-public/static/media/match.6e06489b.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.38081426.js",
-    "static/js/2.ed48bd4b.chunk.js",
+    "static/js/2.580aca2f.chunk.js",
     "static/css/main.fe3c720d.chunk.css",
-    "static/js/main.aded69e5.chunk.js"
+    "static/js/main.92c708c6.chunk.js"
   ]
 }
