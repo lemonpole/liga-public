@@ -1,4 +1,4 @@
-name: Publish
+name: build-prod
 
 
 on:
@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,7 +24,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Deploy to GH pages
+    - name: Install dependencies
+      run: yarn
+
+    - name: Build and trigger GH pages workflow
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email
