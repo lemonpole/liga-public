@@ -46,24 +46,17 @@ p, ol, ul {
 
 
 button {
+  display: block;
   background-color: var(--links-color);
-  padding: 20px 60px;
+  padding-top: 5px;
   border: 0px;
-  color: var(--font-color-light);
   font-size: 1.5em;
 }
 
 
-button, button > * {
+button, button * {
   cursor: pointer;
-}
-
-
-button > small {
-  display: block;
-  padding-top: 5px;
-  font-weight: normal;
-  font-size: .5em;
+  color: var(--font-color-light);
 }
 
 

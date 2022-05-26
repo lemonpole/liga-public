@@ -6,6 +6,8 @@ import './hero.css';
 export default function Hero() {
   const [ loading, setLoading ] = React.useState( false );
   const [ releaseInfo, setReleaseInfo ] = React.useState<Github.ReleaseResponse>();
+  const downloadInfo = Github.API.getDownloadLink( releaseInfo?.assets || [] );
+  const versionInfo = releaseInfo?.name || ( loading ? 'Loading...' : 'Coming soon' );
 
   React.useEffect( () => {
     setLoading( true );
@@ -16,37 +18,24 @@ export default function Hero() {
     ;
   }, []);
 
-  const download_info = Github.API.getDownloadLink( releaseInfo?.assets || [] );
-  console.log( releaseInfo?.name );
   return (
     <section id="hero">
-      <article>
+      <video autoPlay muted loop>
+        <source
+          src={process.env.PUBLIC_URL + '/hero.webm'}
+          type="video/webm"
+        />
+      </video>
+      <article className="glownote">
         <h1 className="small-caps lower">
-          <span>{'The CS:GO esports sim that puts you in the'}</span><br />
-          <b className="glownote">{'game.'}</b>
+          <span>{'An immersive cs:go esports simulator.'}</span>
         </h1>
-        <button className="small-caps lower" onClick={() => window.open( download_info )}>
-          <span>{!! download_info ? 'Download Installer' : loading ? 'Loading...' : 'Download'}</span>
-          <small className="upper">{( releaseInfo?.name || ( loading ? 'Loading...' : 'Coming soon' )).replace( 'v', '' )}</small>
+        <button
+          className="small-caps lower"
+          onClick={() => window.open( downloadInfo )}
+        >
+          <span>{!! downloadInfo ? `Download LESM ${versionInfo}` : loading ? 'Loading...' : 'Download'}</span>
         </button>
-        <h3>
-          <span>{'or see '}</span>
-          <a
-            href={[ Github.API.publicBaseUrl, 'lemonpole/liga-public/releases' ].join( '/' )}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {'all releases.'}
-          </a>
-        </h3>
-      </article>
-      <article>
-        <video autoPlay muted loop className="glow">
-          <source
-            src={process.env.PUBLIC_URL + '/demo.mp4'}
-            type="video/mp4"
-          />
-        </video>
       </article>
     </section>
   );

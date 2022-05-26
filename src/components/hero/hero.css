@@ -3,43 +3,48 @@
 **/
 
 section#hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--accent-1);
   width: 100%;
   height: 100vh;
   padding-top: var(--header-height);
   color: var(--font-color-light);
-  text-align: center;
 }
 
 
-section#hero article:first-child {
-  width: 40%;
-  padding-right: 10px;
+section#hero video {
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  filter: brightness( 75% );
+  width: 100%;
+  height: 100vh;
 }
 
 
-section#hero article + article {
-  width: 50%;
+section#hero article {
+  position: absolute;
+  z-index: 5;
+  bottom: 20px;
+  width: 33%;
+  padding-left: 20px;
 }
 
 
 section#hero h1 {
   margin-bottom: 20px;
   font-weight: 100;
+  text-align: left;
 }
 
 
-section#hero h3 {
-  font-weight: 100;
+section#hero button {
+  padding: 20px 60px;
 }
 
 
-section#hero img, section#hero video {
-  width: 100%;
-  height: auto;
+section#hero button > small {
+  font-weight: normal;
+  font-size: .5em;
 }
 
 
@@ -56,9 +61,7 @@ section#hero img, section#hero video {
     height: auto;
   }
 
-  section#hero article,
-  section#hero article:first-child,
-  section#hero article + article {
+  section#hero article {
     width: 100%;
   }
 }

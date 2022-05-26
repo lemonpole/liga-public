@@ -37,7 +37,7 @@
 }
 
 
-.billboard img {
+.billboard img, .billboard video {
   width: 100%;
   height: auto;
 }

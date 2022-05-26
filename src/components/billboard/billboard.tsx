@@ -8,6 +8,8 @@ interface BillboardImageProps {
   imgTiny: string;
   img: string;
   imgLabel?: string;
+  video?: string;
+  videoType?: string;
 }
 
 
@@ -33,7 +35,7 @@ function BillboardImage( props: BillboardImageProps ) {
 
 export default function Billboard( props: Props ) {
   const items = [
-    <article className={`info ${!props.img ? 'full' : ''}`}>
+    <article className={`info ${!props.img && !props.video ? 'full' : ''}`}>
       <h2>{props.title}</h2>
       {props.children}
     </article>
@@ -41,6 +43,10 @@ export default function Billboard( props: Props ) {
 
   if( props.img ) {
     items.push( <article><BillboardImage {...( props as BillboardImageProps )} /></article> );
+  }
+
+  if( props.video ) {
+    items.push( <article><video autoPlay muted loop><source src={props.video} type={props.videoType}/></video></article> );
   }
 
   return (

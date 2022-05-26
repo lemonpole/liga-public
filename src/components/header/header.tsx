@@ -37,7 +37,6 @@ export default function Header() {
       <nav>
         <ul className={isOpen ? 'open' : ''}>
           <NavItem to="/" onClick={() => setOpen( false )}>{'Home'}</NavItem>
-          <NavItem to="/features" onClick={() => setOpen( false )}>{'Features'}</NavItem>
           <li className="glownote small-caps lower"><a href="/">{'Support'}</a></li>
         </ul>
       </nav>

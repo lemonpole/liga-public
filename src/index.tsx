@@ -28,7 +28,6 @@ function Index() {
         <Header />
         <Routes>
           <Route index element={<Pages.Home />} />
-          <Route path="/features" element={<Pages.Features />} />
         </Routes>
       </ScrollToTop>
     </HashRouter>
