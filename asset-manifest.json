@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/liga-public/static/css/main.fe3c720d.chunk.css",
-    "main.js": "/liga-public/static/js/main.92c708c6.chunk.js",
-    "main.js.map": "/liga-public/static/js/main.92c708c6.chunk.js.map",
+    "main.css": "/liga-public/static/css/main.7cdb6756.chunk.css",
+    "main.js": "/liga-public/static/js/main.e0204527.chunk.js",
+    "main.js.map": "/liga-public/static/js/main.e0204527.chunk.js.map",
     "runtime-main.js": "/liga-public/static/js/runtime-main.38081426.js",
     "runtime-main.js.map": "/liga-public/static/js/runtime-main.38081426.js.map",
     "static/js/2.580aca2f.chunk.js": "/liga-public/static/js/2.580aca2f.chunk.js",
     "static/js/2.580aca2f.chunk.js.map": "/liga-public/static/js/2.580aca2f.chunk.js.map",
     "index.html": "/liga-public/index.html",
-    "static/css/main.fe3c720d.chunk.css.map": "/liga-public/static/css/main.fe3c720d.chunk.css.map",
+    "static/css/main.7cdb6756.chunk.css.map": "/liga-public/static/css/main.7cdb6756.chunk.css.map",
     "static/js/2.580aca2f.chunk.js.LICENSE.txt": "/liga-public/static/js/2.580aca2f.chunk.js.LICENSE.txt",
     "static/media/cs16.bcd59d34.png": "/liga-public/static/media/cs16.bcd59d34.png",
     "static/media/logo.2e8857af.png": "/liga-public/static/media/logo.2e8857af.png",
-    "static/media/match.6e06489b.png": "/liga-public/static/media/match.6e06489b.png",
     "static/media/sell.c3f76971.png": "/liga-public/static/media/sell.c3f76971.png",
     "static/media/spectator.4cf741f1.jpg": "/liga-public/static/media/spectator.4cf741f1.jpg",
     "static/media/squad.172b49d6.png": "/liga-public/static/media/squad.172b49d6.png"
@@ -20,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.38081426.js",
     "static/js/2.580aca2f.chunk.js",
-    "static/css/main.fe3c720d.chunk.css",
-    "static/js/main.92c708c6.chunk.js"
+    "static/css/main.7cdb6756.chunk.css",
+    "static/js/main.e0204527.chunk.js"
   ]
 }
