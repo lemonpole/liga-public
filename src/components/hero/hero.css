@@ -63,5 +63,6 @@ section#hero button > small {
 
   section#hero article {
     width: 100%;
+    padding-right: 20px;
   }
 }
