@@ -46,7 +46,7 @@ export default function Billboard( props: Props ) {
   }
 
   if( props.video ) {
-    items.push( <article><video autoPlay muted loop><source src={props.video} type={props.videoType}/></video></article> );
+    items.push( <article><video autoPlay muted loop playsInline><source src={props.video} type={props.videoType}/></video></article> );
   }
 
   return (
