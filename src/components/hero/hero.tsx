@@ -22,8 +22,8 @@ export default function Hero() {
     <section id="hero">
       <video autoPlay muted loop>
         <source
-          src={process.env.PUBLIC_URL + '/hero.webm'}
-          type="video/webm"
+          src={process.env.PUBLIC_URL + '/hero.mp4'}
+          type="video/mp4"
         />
       </video>
       <article className="glownote">
