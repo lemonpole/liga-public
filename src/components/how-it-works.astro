@@ -1,0 +1,79 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import demoVideo from "~/assets/demo.mp4";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon";
+
+const collection = await getCollection("how-it-works");
+const items = await Promise.all(
+  collection.map(async (item) => ({
+    ...item,
+    Content: (await item.render()).Content,
+  })),
+);
+---
+
+<ContentSection title="How it Works" id="how-it-works">
+  <div class="relative flex w-full justify-center sm:order-last sm:w-1/2">
+    <span
+      class="gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl"
+      aria-hidden="true"></span>
+    <video
+      muted
+      loop
+      playsinline
+      id="demo-video"
+      class="relative w-full rounded-xl object-cover"
+    >
+      <source src={`${demoVideo}#t=0.1`} type="video/mp4" />
+    </video>
+    <Icon
+      id="demo-play-btn"
+      name="mdi:play"
+      class="pointer-events-none absolute z-10 block h-[100px] w-[100px] self-center rounded-full bg-black/70 text-white opacity-90 backdrop-blur-md backdrop-filter"
+    />
+  </div>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      items.map((item) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={item.data.icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{item.data.title}</p>
+          <article class="space-y-4 text-center text-offset text-sm">
+            <item.Content />
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
+
+<script>
+  import invariant from "tiny-invariant";
+
+  const video = document.querySelector("#demo-video") as HTMLVideoElement;
+  const play = document.querySelector("#demo-play-btn") as HTMLElement;
+
+  invariant(video, "video element should not be null");
+  invariant(play, "play element should not be null");
+
+  video.addEventListener("click", toggleVideo);
+  video.addEventListener("ended", stopVideo);
+
+  function toggleVideo() {
+    play.classList.toggle("hidden");
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  function stopVideo() {
+    video.pause();
+    video.currentTime = 0;
+  }
+</script>

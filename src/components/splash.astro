@@ -1,0 +1,65 @@
+---
+import splashImage from "~/assets/splash.png";
+import splashVideo from "~/assets/splash.mp4";
+import HeroImage from "~/components/hero-image.astro";
+import GitHubCorner from "./github-corner.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+---
+
+<section class="relative h-full bg-black">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 h-full w-full object-cover brightness-75"
+  >
+    <source src={splashVideo} type="video/mp4" />
+  </video>
+  <GitHubCorner />
+  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
+    <HeroImage />
+  </div>
+  <div class="relative grid h-full place-items-center gap-6 sm:grid-cols-2">
+    <h2
+      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <Icon name="logo" class="h-24 text-white sm:h-48" />
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+      >
+        An immersive CS:GO esports simulator
+      </div>
+    </h2>
+    <div
+      class="relative w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+    >
+      <span
+        class="gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl"
+        aria-hidden="true"></span>
+      <Image
+        class="relative w-full self-center justify-self-center rounded-xl object-cover"
+        src={splashImage}
+        loading="eager"
+        alt="LIGA Esports Manager match preview screen"
+      />
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>

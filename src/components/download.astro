@@ -1,0 +1,50 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import { Icon } from "astro-icon";
+---
+
+<ContentSection title="Download" id="download">
+  <Icon slot="eyebrow" name="logo" class="h-32" />
+  <Fragment slot="lead">
+    The
+    <span class="text-primary">world's first esports simulator</span>
+     that let's you play your matches
+    <span class="text-primary">inside CS:GO</span>.
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="#how-it-works"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="telescope" class="h-8" />
+      <span>How does it work?</span>
+    </a>
+    <a
+      role="button"
+      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="rocket" class="h-8" />
+      <span>Loading...</span>
+    </a>
+  </div>
+</ContentSection>
+
+<script>
+  import invariant from "tiny-invariant";
+  import { GitHubAPI } from "~/scripts/github";
+
+  const downloadElem = document.querySelector('a[role="button"]');
+  const labelElem = downloadElem?.querySelector("span");
+
+  invariant(downloadElem, "download element should not be null");
+  invariant(labelElem, "label element should not be null");
+
+  (async () => {
+    const releaseInfo = await GitHubAPI.releases("lemonpole/liga-public");
+    const downloadURL = GitHubAPI.getDownloadLink(releaseInfo?.assets || []);
+    const versionInfo = releaseInfo?.name || "Loading...";
+
+    labelElem.innerHTML = `Download ${versionInfo}`;
+    downloadElem.addEventListener("click", () => window.open(downloadURL));
+  })();
+</script>

@@ -1,40 +1,33 @@
-name: build-prod
-
+name: Production
 
 on:
   push:
     branches:
-    - master
+      - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Install dependencies
-      run: yarn
-
-    - name: Build and trigger GH pages workflow
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        yarn deploy
-      env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
-        repository: ${{ github.repository }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install, build, and upload
+        uses: withastro/action@v1
+        env:
+          SITE: "https://${{ github.repository_owner }}.github.io"
+          BASE_URL: "${{ github.event.repository.name }}"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

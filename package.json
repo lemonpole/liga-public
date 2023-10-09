@@ -1,42 +1,37 @@
 {
   "name": "liga-public",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "homepage": "https://lemonpole.github.io/liga-public/",
-  "dependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "hamburger-react": "^2.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-reveal": "^1.2.2",
-    "react-router-dom": "^6.1.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.1.2"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lemonpole/liga-public.git"
   },
   "scripts": {
-    "build": "react-scripts build",
-    "deploy": "npx gh-pages -d build -m \"$(git log -1 --pretty=%B)\"",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "start": "react-scripts start",
-    "test": "react-scripts test"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "@types/micromodal": "0.3.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "prettier": "3.0.3",
+    "prettier-plugin-astro": "0.12.0",
+    "prettier-plugin-tailwindcss": "0.5.4",
+    "tailwindcss-fluid-type": "2.0.3"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "@fontsource-variable/jetbrains-mono": "5.0.15",
+    "@fontsource-variable/montserrat": "5.0.13",
+    "astro": "^3.2.2",
+    "astro-icon": "0.8.1",
+    "micromodal": "0.4.10",
+    "tailwindcss": "^3.3.3",
+    "tiny-invariant": "1.3.1"
   }
 }
