@@ -1,6 +1,6 @@
 # LIGA Esports Manager
 
-<img src="./src/assets/logo.png" alt="LIGA Esports Manager" width="300" height="300" />
+<img src="./src/icons/logo.svg" alt="LIGA Esports Manager" width="300" height="300" />
 
 ## Commands
 
