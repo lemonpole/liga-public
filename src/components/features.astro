@@ -17,7 +17,7 @@ const items = await Promise.all(
     {
       items.map((item) => (
         <div class="flex flex-col place-items-center gap-16 sm:flex-row sm:odd:flex-row-reverse">
-          <div class="relative sm:w-2/3">
+          <div class="relative sm:w-1/2">
             <span
               class="gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl"
               aria-hidden="true"
@@ -29,7 +29,7 @@ const items = await Promise.all(
               alt="@todo"
             />
           </div>
-          <div class="space-y-8 sm:w-1/3">
+          <div class="space-y-8 sm:w-1/2">
             <p class="font-extrabold text-xl">{item.data.title}</p>
             <article class="space-y-4">
               <item.Content />
