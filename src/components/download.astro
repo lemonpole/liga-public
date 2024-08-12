@@ -27,6 +27,22 @@ import { Icon } from "astro-icon";
       <span>Loading...</span>
     </a>
   </div>
+  <div
+    class="flex max-w-xl flex-col items-center gap-4 rounded-2xl bg-yellow-500 p-4 md:flex-row"
+  >
+    <Icon pack="mdi" name="alert-circle-outline" class="basis-1/8 w-8" />
+    <article class="flex flex-col gap-4 text-sm">
+      <p>
+        The app doesn't have a code-signing certificate yet so you might see a
+        warning when downloading or installing the app.
+      </p>
+      <p>
+        To install, click on <code>More Info</code> and <code
+          >Install Anyway</code
+        >.
+      </p>
+    </article>
+  </div>
 </ContentSection>
 
 <script>
