@@ -33,7 +33,7 @@ import { Icon } from "astro-icon";
     const themeCurrent = getThemeCurrent();
     invariant(themeCurrent, "themeCurrent should not be undefined");
     const indexThemeCurrent = themes.indexOf(themeCurrent);
-    return themes[(indexThemeCurrent + 1) % themes.length];
+    return themes[(indexThemeCurrent + 1) % themes.length] as string;
   };
 
   const updateIcon = () => {

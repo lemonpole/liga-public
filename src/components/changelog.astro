@@ -11,10 +11,7 @@ const releases = await GitHubReleases.all("lemonpole/liga-public");
   <article class="grid w-full grid-cols-1 gap-6 md:w-2/3">
     {
       releases.map((release) => (
-        <aside
-          class="prose prose-headings:text-inherit prose-a:text-inherit max-w-none text-inherit"
-          set:html={marked.parse(release.body)}
-        />
+        <aside class="prose max-w-none" set:html={marked.parse(release.body)} />
       ))
     }
   </article>

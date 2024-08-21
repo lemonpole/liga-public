@@ -22,6 +22,15 @@ module.exports = {
       borderColor: {
         default: "var(--color-border)",
       },
+      typography: () => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-body": "var(--color-text)",
+            "--tw-prose-links": "var(--color-primary)",
+            "--tw-prose-headings": "var(--color-text)",
+          },
+        },
+      }),
     },
   },
   corePlugins: {
