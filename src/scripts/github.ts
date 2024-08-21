@@ -1,4 +1,4 @@
-export interface IAsset {
+export interface Asset {
   url: string;
   id: number;
   name: string;
@@ -16,21 +16,47 @@ export interface ReleaseResponse {
   published_at: string;
   tag_name: string;
   tarball_url: string;
-  assets: IAsset[];
+  assets: Asset[];
+  body: string;
 }
 
-export class GitHubAPI {
+export class GitHubReleases {
   public static apiBaseUrl = "https://api.github.com";
   public static publicBaseUrl = "https://github.com";
 
-  public static async releases(repo: string) {
-    const url = [GitHubAPI.apiBaseUrl, "repos", repo, "releases"].join("/");
+  /**
+   * Gets all releases of the provided repo.
+   *
+   * @param repo The repository url.
+   * @function
+   */
+  public static async all(repo: string) {
+    const url = [GitHubReleases.apiBaseUrl, "repos", repo, "releases"].join(
+      "/",
+    );
     const response = await fetch(url);
-    const [data] = (await response.json()) as ReleaseResponse[];
-    return Promise.resolve(data);
+    const data = await response.json();
+    return data as ReleaseResponse[];
   }
 
-  public static getDownloadLink(assets: IAsset[]) {
+  /**
+   * Gets the latest release of the provided repo.
+   *
+   * @param repo The repository url.
+   * @function
+   */
+  public static async latest(repo: string) {
+    const [data] = await GitHubReleases.all(repo);
+    return data;
+  }
+
+  /**
+   * Gets the installer download url from a release's asset list.
+   *
+   * @param assets The list of assets.
+   * @function
+   */
+  public static installer(assets: Asset[]) {
     // setup some sane defaults
     const useragent = navigator.userAgent.toLowerCase();
     const default_download_ext = ".exe";

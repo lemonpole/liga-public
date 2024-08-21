@@ -14,15 +14,3 @@
 | `npm run astro --help` | Get help using the Astro CLI                      |
 | `npm run format`       | Format code with [Prettier](https://prettier.io/) |
 | `npm run clean`        | Remove `node_modules` and build output            |
-
-## Converting PNG to SVG
-
-SVGs are great for responsive websites so if it's feasible, consider converting that PNG to an SVG using [ImageMagick](http://www.imagemagick.org/Usage/draw/#svg_output) and [AutoTrace](https://github.com/autotrace/autotrace).
-
-```bash
-convert autotrace:src/assets/logo.png src/icons/logo.svg
-```
-
-## Credits
-
-- TBD
