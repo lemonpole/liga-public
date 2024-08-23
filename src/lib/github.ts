@@ -1,3 +1,10 @@
+/**
+ * GitHub releases api.
+ *
+ * @module
+ */
+
+/** @interface */
 export interface Asset {
   url: string;
   id: number;
@@ -8,6 +15,7 @@ export interface Asset {
   browser_download_url: string;
 }
 
+/** @interface */
 export interface ReleaseResponse {
   html_url: string;
   id: number;
@@ -20,7 +28,24 @@ export interface ReleaseResponse {
   body: string;
 }
 
-export class GitHubReleases {
+/**
+ * Gets the repo slug from the Github FQDN URL.
+ *
+ * @param url The repository url.
+ * @function
+ */
+export function getRepoSlugFromURL(url: string) {
+  const repoInfo = url.match(/github\.com\/(?<owner>\w+)\/(?<repo>.+)\.git/);
+
+  if (!repoInfo || !repoInfo.groups) {
+    return "";
+  }
+
+  return `${repoInfo.groups.owner}/${repoInfo.groups.repo}`;
+}
+
+/** @class */
+export class Releases {
   public static apiBaseUrl = "https://api.github.com";
   public static publicBaseUrl = "https://github.com";
 
@@ -31,12 +56,14 @@ export class GitHubReleases {
    * @function
    */
   public static async all(repo: string) {
-    const url = [GitHubReleases.apiBaseUrl, "repos", repo, "releases"].join(
-      "/",
-    );
-    const response = await fetch(url);
-    const data = await response.json();
-    return data as ReleaseResponse[];
+    try {
+      const url = [Releases.apiBaseUrl, "repos", repo, "releases"].join("/");
+      const response = await fetch(url);
+      const data = await response.json();
+      return data as ReleaseResponse[];
+    } catch (error) {
+      return [];
+    }
   }
 
   /**
@@ -46,7 +73,7 @@ export class GitHubReleases {
    * @function
    */
   public static async latest(repo: string) {
-    const [data] = await GitHubReleases.all(repo);
+    const [data] = await Releases.all(repo);
     return data;
   }
 
