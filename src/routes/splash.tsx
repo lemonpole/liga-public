@@ -7,7 +7,7 @@ import React from "react";
 import cx from "classnames";
 import logo from "/favicon.svg";
 import splash from "../assets/splash.png";
-import video from "../assets/splash.mp4";
+import video from "../assets/splash.webm";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Octocat } from "@liga/components";
 
@@ -109,7 +109,7 @@ export default function () {
           playsInline
           className="absolute inset-0 h-full w-full object-cover brightness-75"
         >
-          <source src={video} type="video/mp4" />
+          <source src={video} type="video/webm" />
         </video>
         <article className="relative flex flex-col gap-2 self-end sm:gap-4 sm:self-center">
           <img src={logo} className="h-32 text-white sm:h-48" />
