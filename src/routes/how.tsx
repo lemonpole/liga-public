@@ -6,13 +6,7 @@
 import React from "react";
 import cx from "classnames";
 import demo from "../assets/demo.mp4";
-import {
-  FaHandshake,
-  FaPlay,
-  FaPlayCircle,
-  FaSteam,
-  FaUsers,
-} from "react-icons/fa";
+import { FaHandshake, FaPlayCircle, FaSteam, FaUsers } from "react-icons/fa";
 
 /** @constant */
 const items = [
