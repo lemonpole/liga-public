@@ -73,9 +73,9 @@ export default function () {
         </video>
         <button
           className={cx(
-            "pointer-events-none absolute z-10 grid size-12 grid-cols-1 place-items-center self-center",
+            "center pointer-events-none absolute z-10 size-12 self-center",
             "rounded-full text-white opacity-90 backdrop-blur-md backdrop-filter",
-            playing && "hidden",
+            playing && "!hidden",
           )}
         >
           <FaPlayCircle className="size-12" />
@@ -87,7 +87,7 @@ export default function () {
             key={item.title + "__how"}
             className="flex flex-col items-center gap-4 border border-base-content/10 bg-base-200 p-4"
           >
-            <header className="grid size-16 grid-cols-1 place-items-center rounded-full border-2 border-current">
+            <header className="center size-16 rounded-full border-2 border-current">
               <item.icon className="text-5xl" />
             </header>
             <p className="text-center text-xl font-extrabold">{item.title}</p>

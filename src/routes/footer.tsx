@@ -28,7 +28,7 @@ const links = [
  */
 export default function () {
   return (
-    <footer className="relative grid h-64 grid-cols-1 place-items-center">
+    <footer className="center relative h-64">
       <section className="absolute inset-0 overflow-hidden opacity-90">
         <img
           src={footer}
@@ -40,7 +40,7 @@ export default function () {
         {links.map((link) => (
           <li key={link.url + "__footer"}>
             <a
-              className="grid size-16 grid-cols-1 place-items-center rounded-full border-2 border-current p-4"
+              className="center size-16 rounded-full border-2 border-current p-4"
               href={link.url}
               target="_blank"
             >

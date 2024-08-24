@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  @apply grid grid-cols-1 place-items-center gap-24 py-24;
+  @apply center gap-24 py-24;
 }
 
 h2 {
@@ -46,10 +46,10 @@ figure:has(span):has(video) {
 
 /** container sections */
 section[id] {
-  @apply grid scroll-mt-24 grid-cols-1 place-items-center gap-12 px-4 sm:w-2/3;
+  @apply center scroll-mt-24 gap-12 px-4 sm:w-2/3;
 
   & > header {
-    @apply order-first grid grid-cols-1 place-items-center gap-4;
+    @apply center order-first gap-4;
   }
 
   & > header + p {
@@ -102,6 +102,16 @@ section[id] {
 
 /** utilities */
 @layer utilities {
+  .center {
+    &:has(:only-child) {
+      @apply grid grid-cols-1 place-items-center;
+    }
+
+    &:not(:only-child) {
+      @apply flex flex-col items-center justify-center;
+    }
+  }
+
   .gradient-bg {
     @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
   }
