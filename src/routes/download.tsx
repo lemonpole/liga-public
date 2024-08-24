@@ -15,17 +15,18 @@ import { FaDownload, FaExclamationCircle, FaRocket } from "react-icons/fa";
  * @exports
  */
 export default function () {
-  const [downloadUrl, setDownloadUrl] = React.useState<string>();
-  const [downloadVersion, setDownloadVersion] = React.useState<string>();
+  const [release, setRelease] = React.useState<GitHub.ReleaseResponse>();
 
   React.useEffect(() => {
-    GitHub.Releases.latest(
-      GitHub.getRepoSlugFromURL(AppInfo.repository.url),
-    ).then((release) => {
-      setDownloadUrl(GitHub.Releases.installer(release?.assets || []));
-      setDownloadVersion(release?.name);
-    });
+    const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
+    GitHub.Releases.latest(repo).then(setRelease);
   }, []);
+
+  const downloadUrl = React.useMemo(
+    () => GitHub.Releases.installer(release?.assets || []),
+    [release],
+  );
+  const downloadVersion = React.useMemo(() => release?.name, [release]);
 
   return (
     <section id="download">

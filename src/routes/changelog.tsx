@@ -14,14 +14,13 @@ import { GitHub } from "@liga/lib";
  * @exports
  */
 export default function () {
-  const [releases, setReleases] = React.useState<
-    Awaited<ReturnType<typeof GitHub.Releases.all>>
-  >([]);
+  const [releases, setReleases] = React.useState<Array<GitHub.ReleaseResponse>>(
+    [],
+  );
 
   React.useEffect(() => {
-    GitHub.Releases.all(GitHub.getRepoSlugFromURL(AppInfo.repository.url)).then(
-      (release) => setReleases(release),
-    );
+    const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
+    GitHub.Releases.all(repo).then(setReleases);
   }, []);
 
   return (
@@ -34,7 +33,7 @@ export default function () {
         .map((release) => (
           <article
             key={release.name + "__changelog"}
-            className="prose-h2:text-left prose w-full max-w-none"
+            className="prose w-full max-w-none prose-h2:text-left"
           >
             <Markdown>{release.body}</Markdown>
           </article>

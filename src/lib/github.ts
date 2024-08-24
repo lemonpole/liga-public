@@ -56,14 +56,10 @@ export class Releases {
    * @function
    */
   public static async all(repo: string) {
-    try {
-      const url = [Releases.apiBaseUrl, "repos", repo, "releases"].join("/");
-      const response = await fetch(url);
-      const data = await response.json();
-      return data as ReleaseResponse[];
-    } catch (error) {
-      return [];
-    }
+    const url = [Releases.apiBaseUrl, "repos", repo, "releases"].join("/");
+    const response = await fetch(url);
+    const data = await response.json();
+    return data as ReleaseResponse[];
   }
 
   /**
@@ -73,8 +69,8 @@ export class Releases {
    * @function
    */
   public static async latest(repo: string) {
-    const [data] = await Releases.all(repo);
-    return data;
+    const data = await Releases.all(repo);
+    return data[0];
   }
 
   /**
