@@ -100,7 +100,7 @@ export default function () {
       </header>
 
       {/** HERO BANNER */}
-      <section className="relative grid h-full grid-cols-1 place-items-center gap-6 bg-black sm:grid-cols-2">
+      <section className="relative grid h-full grid-cols-1 place-items-center gap-6 bg-black px-4 sm:grid-cols-2">
         <Octocat />
         <video
           autoPlay
@@ -112,10 +112,10 @@ export default function () {
           <source src={video} type="video/webm" />
         </video>
         <article className="relative flex flex-col gap-2 self-end sm:gap-4 sm:self-center">
-          <img src={logo} className="h-32 text-white sm:h-48" />
+          <img src={logo} className="hidden h-32 text-white sm:block sm:h-48" />
           <h2>An immersive CS:GO esports simulator</h2>
         </article>
-        <figure className="relative w-2/3 self-start sm:w-10/12 sm:self-center">
+        <figure className="relative w-full self-start sm:w-4/5 sm:self-center">
           <span
             className="gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl"
             aria-hidden="true"
