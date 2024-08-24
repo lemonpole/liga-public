@@ -14,9 +14,8 @@ import { GitHub } from "@liga/lib";
  * @exports
  */
 export default function () {
-  const [releases, setReleases] = React.useState<Array<GitHub.ReleaseResponse>>(
-    [],
-  );
+  const [releases, setReleases] =
+    React.useState<Array<GitHub.ReleaseResponse>>();
 
   React.useEffect(() => {
     const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
@@ -28,16 +27,17 @@ export default function () {
       <header>
         <h2>Release Notes</h2>
       </header>
-      {releases
-        .filter((release) => release.body)
-        .map((release) => (
-          <article
-            key={release.name + "__changelog"}
-            className="prose w-full max-w-none prose-h2:text-left"
-          >
-            <Markdown>{release.body}</Markdown>
-          </article>
-        ))}
+      {Array.isArray(releases) &&
+        releases
+          .filter((release) => release.body)
+          .map((release) => (
+            <article
+              key={release.name + "__changelog"}
+              className="prose w-full max-w-none prose-h2:text-left"
+            >
+              <Markdown>{release.body}</Markdown>
+            </article>
+          ))}
     </section>
   );
 }
