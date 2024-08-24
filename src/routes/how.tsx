@@ -6,7 +6,13 @@
 import React from "react";
 import cx from "classnames";
 import demo from "../assets/demo.mp4";
-import { FaHandshake, FaPlay, FaSteam, FaUsers } from "react-icons/fa";
+import {
+  FaHandshake,
+  FaPlay,
+  FaPlayCircle,
+  FaSteam,
+  FaUsers,
+} from "react-icons/fa";
 
 /** @constant */
 const items = [
@@ -73,12 +79,12 @@ export default function () {
         </video>
         <button
           className={cx(
-            "pointer-events-none absolute z-10 grid size-[100px] grid-cols-1 place-items-center self-center",
-            "rounded-full bg-black/70 text-white opacity-90 backdrop-blur-md backdrop-filter",
+            "pointer-events-none absolute z-10 grid size-12 grid-cols-1 place-items-center self-center",
+            "rounded-full text-white opacity-90 backdrop-blur-md backdrop-filter",
             playing && "hidden",
           )}
         >
-          <FaPlay className="size-8" />
+          <FaPlayCircle className="size-12" />
         </button>
       </figure>
       <ul className="grid max-w-4xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
