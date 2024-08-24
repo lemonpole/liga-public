@@ -45,7 +45,7 @@ export default function () {
       {/** NAVIGATION OVERLAY */}
       <dialog className={cx("modal", modalOpen && "modal-open")}>
         <button
-          className="btn btn-square btn-ghost absolute right-4 top-4 z-10"
+          className="btn btn-square btn-ghost absolute right-8 top-4 z-10"
           onClick={() => setModalOpen(false)}
         >
           <FaTimes className="text-2xl" />
