@@ -1,5 +1,5 @@
 /**
- * Footer component.
+ * Footer partial.
  *
  * @module
  */

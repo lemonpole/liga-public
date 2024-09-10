@@ -1,5 +1,5 @@
 /**
- * Download component.
+ * Download partial.
  *
  * @module
  */

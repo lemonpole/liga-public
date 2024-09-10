@@ -1,5 +1,5 @@
 /**
- * How it works.
+ * How it works partial.
  *
  * @module
  */

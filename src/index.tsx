@@ -5,7 +5,7 @@
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Routes from "@liga/routes";
+import Partials from "@liga/partials";
 import "@fontsource-variable/montserrat";
 import "@fontsource-variable/jetbrains-mono";
 import "./index.css";
@@ -18,14 +18,14 @@ import "./index.css";
 function Index() {
   return (
     <React.StrictMode>
-      <Routes.Splash />
+      <Partials.Splash />
       <main>
-        <Routes.Download />
-        <Routes.How />
-        <Routes.Features />
-        <Routes.Changelog />
+        <Partials.Download />
+        <Partials.How />
+        <Partials.Features />
+        <Partials.Changelog />
       </main>
-      <Routes.Footer />
+      <Partials.Footer />
     </React.StrictMode>
   );
 }

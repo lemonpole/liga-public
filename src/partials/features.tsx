@@ -1,5 +1,5 @@
 /**
- * Features overview.
+ * Features partial.
  *
  * @module
  */

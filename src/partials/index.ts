@@ -1,5 +1,5 @@
 /**
- * Collection of routes.
+ * Collection of partials.
  *
  * @module
  */

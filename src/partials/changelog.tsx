@@ -1,5 +1,5 @@
 /**
- * Changelog component.
+ * Changelog partial.
  *
  * @module
  */

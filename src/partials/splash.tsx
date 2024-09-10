@@ -1,5 +1,5 @@
 /**
- * Splash component.
+ * Splash partial.
  *
  * @module
  */
