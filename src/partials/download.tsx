@@ -4,8 +4,8 @@
  * @module
  */
 import React from "react";
-import AppInfo from "package.json";
 import logo from "/favicon.svg";
+import { Link, useLoaderData } from "react-router-dom";
 import { GitHub } from "@liga/lib";
 import { FaDownload, FaExclamationCircle, FaRocket } from "react-icons/fa";
 
@@ -15,13 +15,7 @@ import { FaDownload, FaExclamationCircle, FaRocket } from "react-icons/fa";
  * @exports
  */
 export default function () {
-  const [release, setRelease] = React.useState<GitHub.ReleaseResponse>();
-
-  React.useEffect(() => {
-    const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
-    GitHub.Releases.latest(repo).then(setRelease);
-  }, []);
-
+  const [release] = useLoaderData() as Array<GitHub.ReleaseResponse>;
   const downloadUrl = React.useMemo(
     () => GitHub.Releases.installer(release?.assets || []),
     [release],
@@ -41,10 +35,10 @@ export default function () {
         <code>inside CS:GO</code>.
       </p>
       <article className="grid w-full grid-cols-1 gap-2 sm:w-1/2 sm:grid-cols-2">
-        <a href="#how-it-works" role="button" className="btn btn-lg">
+        <Link className="btn btn-lg" to="/#how-it-works">
           <FaRocket className="h-8" />
           <span>How does it work?</span>
-        </a>
+        </Link>
         <a
           role="button"
           className="btn btn-lg"

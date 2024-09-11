@@ -3,29 +3,68 @@
  *
  * @module
  */
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Partials from "@liga/partials";
 import "@fontsource-variable/montserrat";
 import "@fontsource-variable/jetbrains-mono";
 import "./index.css";
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Routes from "@liga/routes";
+import Partials from "@liga/partials";
+import {
+  createHashRouter,
+  Outlet,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
+
+/** @constant */
+const routes = createHashRouter([
+  {
+    element: <Root />,
+    children: [
+      {
+        index: true,
+        element: <Routes.Home.Component />,
+        loader: Routes.Home.loader,
+      },
+    ],
+  },
+]);
+
+/**
+ * The root component.
+ *
+ * @function
+ */
+function Root() {
+  // restore smooth scrolling on anchor links
+  const location = useLocation();
+
+  React.useEffect(() => {
+    const [, id] = window.location.hash.match(/\/#(.+)$/) || [];
+    const el = document.getElementById(id);
+    el?.scrollIntoView();
+  }, [location.hash]);
+
+  return (
+    <React.Fragment>
+      <Partials.Header />
+      <Outlet />
+      <Partials.Footer />
+    </React.Fragment>
+  );
+}
+
 /**
  * The index component
  *
- * @component
+ * @function
  */
 function Index() {
   return (
     <React.StrictMode>
-      <Partials.Splash />
-      <main>
-        <Partials.Download />
-        <Partials.How />
-        <Partials.Features />
-        <Partials.Changelog />
-      </main>
-      <Partials.Footer />
+      <RouterProvider router={routes} />
     </React.StrictMode>
   );
 }

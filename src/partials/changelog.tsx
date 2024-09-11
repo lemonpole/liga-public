@@ -3,9 +3,8 @@
  *
  * @module
  */
-import React from "react";
 import Markdown from "react-markdown";
-import AppInfo from "package.json";
+import { useLoaderData } from "react-router-dom";
 import { GitHub } from "@liga/lib";
 
 /**
@@ -14,14 +13,7 @@ import { GitHub } from "@liga/lib";
  * @exports
  */
 export default function () {
-  const [releases, setReleases] =
-    React.useState<Array<GitHub.ReleaseResponse>>();
-
-  React.useEffect(() => {
-    const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
-    GitHub.Releases.all(repo).then(setReleases);
-  }, []);
-
+  const releases = useLoaderData() as Array<GitHub.ReleaseResponse>;
   return (
     <section id="changelog">
       <header>

@@ -83,7 +83,7 @@ section[id] {
 /** components */
 @layer components {
   .fixed-header {
-    @apply !fixed !bottom-auto top-0 !border-b !border-b-base-content/10 bg-base-100 !text-base-content;
+    @apply !fixed !bottom-auto top-0 !border-b-base-content/10 bg-base-100 !text-base-content;
 
     & > a > img {
       @apply ml-0 scale-100;

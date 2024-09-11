@@ -7,6 +7,7 @@ import Changelog from "./changelog";
 import Download from "./download";
 import Features from "./features";
 import Footer from "./footer";
+import Header from "./header";
 import How from "./how";
 import Splash from "./splash";
 
@@ -20,6 +21,7 @@ export default {
   Download,
   Features,
   Footer,
+  Header,
   How,
   Splash,
 };
