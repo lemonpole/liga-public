@@ -5,8 +5,9 @@
  */
 import React from "react";
 import logo from "/favicon.svg";
+import { useReadQuery } from "@apollo/client";
 import { Link, useLoaderData } from "react-router-dom";
-import { GitHub } from "@liga/lib";
+import { Api } from "@liga/lib";
 import { FaDownload, FaExclamationCircle, FaRocket } from "react-icons/fa";
 
 /**
@@ -15,9 +16,16 @@ import { FaDownload, FaExclamationCircle, FaRocket } from "react-icons/fa";
  * @exports
  */
 export default function () {
-  const [release] = useLoaderData() as Array<GitHub.ReleaseResponse>;
+  const { data } = useReadQuery(useLoaderData() as Api.Response["repository"]);
+  const [release] = React.useMemo(
+    () => data.repository?.releases.nodes || [],
+    [data],
+  );
   const downloadUrl = React.useMemo(
-    () => GitHub.Releases.installer(release?.assets || []),
+    () =>
+      release?.releaseAssets.nodes?.find(
+        (item) => item?.downloadUrl.indexOf("exe") >= 0,
+      )?.downloadUrl,
     [release],
   );
   const downloadVersion = React.useMemo(() => release?.name, [release]);

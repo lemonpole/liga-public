@@ -2,11 +2,25 @@
 
 <img src="./public/favicon.svg" alt="LIGA Esports Manager" width="300" height="300" />
 
+This is the website source code for [LIGA Esports Manager](https://lemonpole.github.io/liga-public/).
+
+Uses the following APIs and technologies:
+
+- Node v20.x
+- [GitHub GraphQL API](https://docs.github.com/en/graphql)
+- [GraphQL Code Generator](https://the-guild.dev/graphql/codegen)
+- [Daisy UI](https://daisyui.com/)
+
 ## Getting Started
 
-If you'd like to run the website locally in development mode, run the following.
+> [!IMPORTANT]
+> A [Github Access Token](https://github.com/settings/tokens) is required.
 
 ```bash
+# set github access token
+echo -n "<YOUR_TOKEN_HERE>" >> .env.local
+
+# run the app
 npm install
 npm run dev -- --host --open
 ```

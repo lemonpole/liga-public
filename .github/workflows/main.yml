@@ -32,6 +32,7 @@ jobs:
         run: npm run build -- --base "$BASE_URL"
         env:
           BASE_URL: "/${{ github.event.repository.name }}/"
+          VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

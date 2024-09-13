@@ -6,11 +6,11 @@
 import "@fontsource-variable/montserrat";
 import "@fontsource-variable/jetbrains-mono";
 import "./index.css";
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Routes from "@liga/routes";
 import Partials from "@liga/partials";
+import { Api } from "@liga/lib";
 import {
   createHashRouter,
   Outlet,
@@ -64,7 +64,9 @@ function Root() {
 function Index() {
   return (
     <React.StrictMode>
-      <RouterProvider router={routes} />
+      <Api.Provider client={Api.client}>
+        <RouterProvider router={routes} />
+      </Api.Provider>
     </React.StrictMode>
   );
 }

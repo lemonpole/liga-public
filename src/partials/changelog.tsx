@@ -3,9 +3,11 @@
  *
  * @module
  */
+import React from "react";
 import Markdown from "react-markdown";
+import { useReadQuery } from "@apollo/client";
 import { useLoaderData } from "react-router-dom";
-import { GitHub } from "@liga/lib";
+import { Api } from "@liga/lib";
 
 /**
  * Exports this module.
@@ -13,7 +15,11 @@ import { GitHub } from "@liga/lib";
  * @exports
  */
 export default function () {
-  const releases = useLoaderData() as Array<GitHub.ReleaseResponse>;
+  const { data } = useReadQuery(useLoaderData() as Api.Response["repository"]);
+  const releases = React.useMemo(
+    () => data.repository?.releases.nodes || [],
+    [data],
+  );
   return (
     <section id="changelog">
       <header>
@@ -21,13 +27,13 @@ export default function () {
       </header>
       {Array.isArray(releases) &&
         releases
-          .filter((release) => release.body)
+          .filter((release) => release?.description)
           .map((release) => (
             <article
-              key={release.name + "__changelog"}
+              key={release?.name + "__changelog"}
               className="prose w-full max-w-none prose-h2:text-left"
             >
-              <Markdown>{release.body}</Markdown>
+              <Markdown>{release?.description}</Markdown>
             </article>
           ))}
     </section>

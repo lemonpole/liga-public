@@ -4,9 +4,8 @@
  * @module
  */
 import React from "react";
-import AppInfo from "package.json";
 import Partials from "@liga/partials";
-import { GitHub } from "@liga/lib";
+import { Api } from "@liga/lib";
 
 /**
  * The route data loader.
@@ -14,8 +13,8 @@ import { GitHub } from "@liga/lib";
  * @function
  */
 function loader() {
-  const repo = GitHub.getRepoSlugFromURL(AppInfo.repository.url);
-  return GitHub.Releases.all(repo);
+  const variables = Api.getRepoInfo();
+  return Api.preloadQuery(Api.Query.repository, { variables });
 }
 
 /**
