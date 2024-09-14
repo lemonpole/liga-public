@@ -67,7 +67,6 @@ export default function () {
         <h2>How it Works</h2>
       </header>
       <figure className="flex w-full justify-center sm:order-last sm:w-1/2">
-        <span aria-hidden="true" />
         <video muted loop playsInline onClick={toggleVideo}>
           <source src={`${demo}#t=0.1`} type="video/mp4" />
         </video>

@@ -15,6 +15,7 @@ import {
   createHashRouter,
   Outlet,
   RouterProvider,
+  ScrollRestoration,
   useLocation,
 } from "react-router-dom";
 
@@ -27,6 +28,11 @@ const routes = createHashRouter([
         index: true,
         element: <Routes.Home.Component />,
         loader: Routes.Home.loader,
+      },
+      {
+        path: "/blog",
+        element: <Routes.Blog.Component />,
+        loader: Routes.Blog.loader,
       },
     ],
   },
@@ -49,6 +55,7 @@ function Root() {
 
   return (
     <React.Fragment>
+      <ScrollRestoration />
       <Partials.Header />
       <Outlet />
       <Partials.Footer />

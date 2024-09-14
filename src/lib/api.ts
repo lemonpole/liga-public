@@ -62,6 +62,16 @@ export const Query = {
             }
           }
         }
+        discussions(first: $num) {
+          nodes {
+            author {
+              login
+            }
+            body
+            createdAt
+            title
+          }
+        }
       }
     }
   `),

@@ -3,6 +3,7 @@
  *
  * @module
  */
+import Blog from "./blog";
 import Home from "./home";
 
 /**
@@ -11,5 +12,6 @@ import Home from "./home";
  * @exports
  */
 export default {
+  Blog,
   Home,
 };

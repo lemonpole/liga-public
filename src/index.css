@@ -17,7 +17,7 @@ main {
 }
 
 h2 {
-  @apply gradient-text text-center text-5xl font-extrabold tracking-tighter sm:text-8xl;
+  @apply gradient-text text-5xl font-extrabold tracking-tighter sm:text-8xl;
 }
 
 code {
@@ -30,18 +30,10 @@ a {
 }
 
 /** image and video gradient background */
-figure:has(span):has(img),
-figure:has(span):has(video) {
-  @apply relative;
-
-  span {
-    @apply gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl;
-  }
-
-  img,
-  video {
-    @apply relative w-full self-center justify-self-center rounded-xl object-cover;
-  }
+figure:has(video),
+figure:has(img),
+p:has(img:only-child) {
+  @apply gradient-media;
 }
 
 /** container sections */
@@ -86,7 +78,7 @@ section[id] {
     @apply !fixed !bottom-auto top-0 !border-b-base-content/10 bg-base-100 !text-base-content;
 
     & > a > img {
-      @apply ml-0 scale-100;
+      @apply !ml-0 !scale-100;
     }
   }
 
@@ -96,6 +88,20 @@ section[id] {
     .octo-arm,
     &:hover .octo-arm {
       animation: octocat-wave 560ms ease-in-out;
+    }
+  }
+
+  .gradient-media {
+    @apply relative;
+
+    &:before {
+      content: "";
+      @apply gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl;
+    }
+
+    img,
+    video {
+      @apply relative w-full self-center justify-self-center rounded-xl object-cover;
     }
   }
 }

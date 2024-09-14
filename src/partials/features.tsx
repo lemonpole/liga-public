@@ -73,7 +73,6 @@ export default function () {
           className="flex flex-col place-items-center gap-4 sm:flex-row sm:gap-24 sm:odd:flex-row-reverse"
         >
           <figure className="sm:w-1/2">
-            <span aria-hidden="true" />
             <img src={item.image} />
           </figure>
           <aside className="space-y-4 sm:w-1/2">

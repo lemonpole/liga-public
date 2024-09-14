@@ -31,10 +31,6 @@ export default function () {
         <h2>An immersive CS:GO esports simulator</h2>
       </article>
       <figure className="relative w-full self-start sm:w-4/5 sm:self-center">
-        <span
-          className="gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl"
-          aria-hidden="true"
-        />
         <img
           className="relative w-full self-center justify-self-center rounded-xl object-cover"
           alt="LIGA Esports Manager match preview screen"

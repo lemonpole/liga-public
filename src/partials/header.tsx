@@ -6,7 +6,7 @@
 import React from "react";
 import cx from "classnames";
 import logo from "/favicon.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 /** @constant */
@@ -15,6 +15,7 @@ const navItems: Array<{ title: string; url: string }> = [
   { title: "How it Works", url: "/#how-it-works" },
   { title: "Features", url: "/#features" },
   { title: "Release Notes", url: "/#changelog" },
+  { title: "Blog", url: "/blog" },
 ];
 
 /** @function */
@@ -31,12 +32,16 @@ function handleOnScroll() {
  * @exports
  */
 export default function () {
+  const location = useLocation();
   const [modalOpen, setModalOpen] = React.useState(false);
 
   React.useEffect(() => {
-    document.addEventListener("scroll", handleOnScroll);
-    return () => window.removeEventListener("scroll", handleOnScroll);
-  }, []);
+    if (location.pathname === "/") {
+      document.addEventListener("scroll", handleOnScroll);
+    }
+
+    return () => document.removeEventListener("scroll", handleOnScroll);
+  }, [location.pathname]);
 
   return (
     <React.Fragment>
@@ -71,7 +76,15 @@ export default function () {
       </dialog>
 
       {/** NAVIGATION BAR */}
-      <header className="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white">
+      <header
+        className={cx(
+          "absolute bottom-0 z-20",
+          "flex w-full items-center justify-between",
+          "border-b border-transparent",
+          "px-8 py-4 text-white",
+          location.pathname !== "/" && "fixed-header",
+        )}
+      >
         <a className="flex items-center gap-3" href="#">
           <img
             src={logo}
