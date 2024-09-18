@@ -28,7 +28,7 @@ export default function () {
       </video>
       <article className="relative flex flex-col gap-2 self-end sm:gap-4 sm:self-center">
         <img src={logo} className="hidden h-32 text-white sm:block sm:h-48" />
-        <h2>An immersive CS:GO esports simulator</h2>
+        <h2 className="text-center">An immersive CS:GO esports simulator</h2>
       </article>
       <figure className="relative w-full self-start sm:w-4/5 sm:self-center">
         <img

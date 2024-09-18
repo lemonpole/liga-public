@@ -46,15 +46,20 @@ export const preloadQuery = createQueryPreloader(client);
 /** @constant */
 export const Query = {
   repository: graphql(`
-    query repository($owner: String!, $name: String!, $num: Int = 50) {
+    query repository(
+      $owner: String!
+      $name: String!
+      $numReleases: Int = 5
+      $numDiscussions: Int = 50
+    ) {
       repository(owner: $owner, name: $name) {
-        releases(first: $num) {
+        releases(first: $numReleases) {
           nodes {
             description
             createdAt
             isLatest
             name
-            releaseAssets(first: $num) {
+            releaseAssets(first: $numReleases) {
               nodes {
                 downloadUrl
                 name
@@ -62,7 +67,7 @@ export const Query = {
             }
           }
         }
-        discussions(first: $num) {
+        discussions(first: $numDiscussions) {
           nodes {
             author {
               login
