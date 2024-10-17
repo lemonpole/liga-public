@@ -4,7 +4,7 @@
  * @module
  */
 import React from "react";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 import { useReadQuery } from "@apollo/client";
 import { useLoaderData } from "react-router-dom";
 import { Api } from "@liga/lib";
@@ -33,7 +33,18 @@ export default function () {
               key={release?.name + "__changelog"}
               className="prose w-full max-w-none prose-h2:text-left"
             >
-              <Markdown>{release?.description}</Markdown>
+              <ReactMarkdown
+                children={release?.description}
+                components={{
+                  a(props) {
+                    return (
+                      <a href={props.href} target="_blank" rel="noreferrer">
+                        {props.children}
+                      </a>
+                    );
+                  },
+                }}
+              />
             </article>
           ))}
     </section>

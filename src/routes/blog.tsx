@@ -3,7 +3,8 @@
  *
  * @module
  */
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import { useReadQuery } from "@apollo/client";
 import { useLoaderData } from "react-router-dom";
 import { Api } from "@liga/lib";
@@ -36,7 +37,23 @@ function Component() {
             <h1>{discussion?.title}</h1>
           </header>
           <section>
-            <Markdown>{discussion?.body}</Markdown>
+            <ReactMarkdown
+              children={discussion?.body}
+              rehypePlugins={
+                [rehypeRaw] as Parameters<
+                  typeof ReactMarkdown
+                >[number]["remarkPlugins"]
+              }
+              components={{
+                a(props) {
+                  return (
+                    <a href={props.href} target="_blank" rel="noreferrer">
+                      {props.children}
+                    </a>
+                  );
+                },
+              }}
+            />
           </section>
         </article>
       ))}
