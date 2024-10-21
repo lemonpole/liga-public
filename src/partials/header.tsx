@@ -63,7 +63,12 @@ export default function () {
               {navItems.map(({ title, url }) => (
                 <li key={title + "__modal"}>
                   {/https?:\/\//g.test(url) ? (
-                    <a href={url} target="_blank" rel="noreferrer">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block py-4 text-center text-2xl"
+                    >
                       {title}
                     </a>
                   ) : (
@@ -103,7 +108,12 @@ export default function () {
             {navItems.map(({ title, url }) => (
               <li key={title + "__navbar"}>
                 {/https?:\/\//g.test(url) ? (
-                  <a href={url} target="_blank" rel="noreferrer">
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm"
+                  >
                     {title}
                   </a>
                 ) : (
