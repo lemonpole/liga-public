@@ -33,6 +33,7 @@ jobs:
         env:
           BASE_URL: "/${{ github.event.repository.name }}/"
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+          VITE_DISCORD_INVITE_CODE: ${{ vars.VITE_DISCORD_INVITE_CODE }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

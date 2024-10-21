@@ -16,6 +16,7 @@ const navItems: Array<{ title: string; url: string }> = [
   { title: "Features", url: "/#features" },
   { title: "Release Notes", url: "/#changelog" },
   { title: "Blog", url: "/blog" },
+  { title: "Discord Server", url: "https://discord.playliga.gg" },
 ];
 
 /** @function */
@@ -61,13 +62,19 @@ export default function () {
             <ul>
               {navItems.map(({ title, url }) => (
                 <li key={title + "__modal"}>
-                  <Link
-                    className="block py-4 text-center text-2xl"
-                    to={url}
-                    onClick={() => setModalOpen(false)}
-                  >
-                    {title}
-                  </Link>
+                  {/https?:\/\//g.test(url) ? (
+                    <a href={url} target="_blank" rel="noreferrer">
+                      {title}
+                    </a>
+                  ) : (
+                    <Link
+                      className="block py-4 text-center text-2xl"
+                      to={url}
+                      onClick={() => setModalOpen(false)}
+                    >
+                      {title}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -95,9 +102,15 @@ export default function () {
           <ul className="flex items-center gap-6">
             {navItems.map(({ title, url }) => (
               <li key={title + "__navbar"}>
-                <Link className="text-sm" to={url}>
-                  {title}
-                </Link>
+                {/https?:\/\//g.test(url) ? (
+                  <a href={url} target="_blank" rel="noreferrer">
+                    {title}
+                  </a>
+                ) : (
+                  <Link className="text-sm" to={url}>
+                    {title}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
