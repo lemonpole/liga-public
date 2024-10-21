@@ -16,7 +16,7 @@ const navItems: Array<{ title: string; url: string }> = [
   { title: "Features", url: "/#features" },
   { title: "Release Notes", url: "/#changelog" },
   { title: "Blog", url: "/blog" },
-  { title: "Discord Server", url: "https://discord.playliga.gg" },
+  { title: "Discord Server", url: `https://discord.gg/${import.meta.env.VITE_DISCORD_INVITE_CODE}` },
 ];
 
 /** @function */

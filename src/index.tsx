@@ -85,15 +85,6 @@ function Index() {
  * @function
  */
 (() => {
-  // handle discord redirect if discord's
-  // subdomain is detected
-  const [subdomain] = window.location.hostname.split(".");
-
-  if (subdomain && subdomain === "discord") {
-    window.location.href = `https://discord.gg/${import.meta.env.VITE_DISCORD_INVITE_CODE}`;
-    return;
-  }
-
   // grab the root container
   const container = document.getElementById("root");
 
