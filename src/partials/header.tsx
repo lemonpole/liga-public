@@ -3,29 +3,10 @@
  *
  * @module
  */
-import React from "react";
 import cx from "classnames";
 import logo from "/favicon.svg";
-import { Link, useLocation } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-
-/** @constant */
-const navItems: Array<{ title: string; url: string }> = [
-  { title: "Download", url: "/#download" },
-  { title: "How it Works", url: "/#how-it-works" },
-  { title: "Features", url: "/#features" },
-  { title: "Release Notes", url: "/#changelog" },
-  { title: "Blog", url: "/blog" },
-  { title: "Discord Server", url: `https://discord.gg/${import.meta.env.VITE_DISCORD_INVITE_CODE}` },
-];
-
-/** @function */
-function handleOnScroll() {
-  const header = document.querySelector("#root > header") as HTMLElement;
-  const page = document.documentElement;
-  const difference = page.clientHeight - page.scrollTop - header.offsetHeight;
-  header.classList.toggle("fixed-header", difference < 0);
-}
+import { FaClock, FaHome, FaRocket, FaRss } from "react-icons/fa";
+import { useMatch, useNavigate } from "react-router-dom";
 
 /**
  * Exports this module.
@@ -33,105 +14,54 @@ function handleOnScroll() {
  * @exports
  */
 export default function () {
-  const location = useLocation();
-  const [modalOpen, setModalOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    if (location.pathname === "/") {
-      document.addEventListener("scroll", handleOnScroll);
-    }
-
-    return () => document.removeEventListener("scroll", handleOnScroll);
-  }, [location.pathname]);
+  const navigate = useNavigate();
 
   return (
-    <React.Fragment>
-      {/** NAVIGATION OVERLAY */}
-      <dialog className={cx("modal", modalOpen && "modal-open")}>
-        <button
-          className="btn btn-square btn-ghost absolute right-8 top-4 z-10"
-          onClick={() => setModalOpen(false)}
-        >
-          <FaTimes className="text-2xl" />
-        </button>
-        <section className="fixed inset-0 grid grid-rows-2 place-items-center gap-4 bg-base-100">
-          <header className="flex justify-center">
-            <img src={logo} className="h-32" />
-          </header>
-          <nav>
-            <ul>
-              {navItems.map(({ title, url }) => (
-                <li key={title + "__modal"}>
-                  {/https?:\/\//g.test(url) ? (
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="block py-4 text-center text-2xl"
-                    >
-                      {title}
-                    </a>
-                  ) : (
-                    <Link
-                      className="block py-4 text-center text-2xl"
-                      to={url}
-                      onClick={() => setModalOpen(false)}
-                    >
-                      {title}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </section>
-      </dialog>
-
-      {/** NAVIGATION BAR */}
-      <header
-        className={cx(
-          "absolute bottom-0 z-20",
-          "flex w-full items-center justify-between",
-          "border-b border-transparent",
-          "px-8 py-4 text-white",
-          location.pathname !== "/" && "fixed-header",
-        )}
+    <header
+      className={cx(
+        "btm-nav z-20 bg-base-200",
+        "md:stack-y md:sticky md:top-0 md:h-screen md:items-start md:justify-normal",
+        "[&_button]:md:btn [&_button]:md:btn-lg [&_button]:md:btn-block [&_button]:md:basis-auto [&_button]:md:flex-row",
+        "[&_span]:hidden [&_span]:md:inline",
+      )}
+    >
+      <img
+        src={logo}
+        alt="LIGA Esports Manager"
+        className="mx-auto my-4 hidden h-auto w-1/2 basis-auto md:block"
+      />
+      <button
+        title="Home"
+        className={cx(useMatch("/") && "active md:!bg-base-300")}
+        onClick={() => navigate("/")}
       >
-        <a className="flex items-center gap-3" href="#">
-          <img
-            src={logo}
-            className="-ml-20 h-10 scale-0 transition-all duration-500"
-          />
-        </a>
-        <nav className="hidden items-center gap-6 sm:flex">
-          <ul className="flex items-center gap-6">
-            {navItems.map(({ title, url }) => (
-              <li key={title + "__navbar"}>
-                {/https?:\/\//g.test(url) ? (
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm"
-                  >
-                    {title}
-                  </a>
-                ) : (
-                  <Link className="text-sm" to={url}>
-                    {title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <button
-          className="btn btn-square btn-ghost sm:hidden"
-          onClick={() => setModalOpen(!modalOpen)}
-        >
-          <FaBars className="text-2xl" />
-        </button>
-      </header>
-    </React.Fragment>
+        <FaHome />
+        <span>Home</span>
+      </button>
+      <button
+        title="Changelog"
+        className={cx(useMatch("changelog") && "active md:!bg-base-300")}
+        onClick={() => navigate("changelog")}
+      >
+        <FaClock />
+        <span>Changelog</span>
+      </button>
+      <button
+        title="Features"
+        className={cx(useMatch("features") && "active md:!bg-base-300")}
+        onClick={() => navigate("features")}
+      >
+        <FaRocket />
+        <span>Features</span>
+      </button>
+      <button
+        title="Blog"
+        className={cx(useMatch("blog") && "active md:!bg-base-300")}
+        onClick={() => navigate("blog")}
+      >
+        <FaRss />
+        <span>Blog</span>
+      </button>
+    </header>
   );
 }

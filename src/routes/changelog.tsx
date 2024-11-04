@@ -1,5 +1,5 @@
 /**
- * Changelog partial.
+ * Changelog route.
  *
  * @module
  */
@@ -21,18 +21,15 @@ export default function () {
     [data],
   );
   return (
-    <section id="changelog">
-      <header>
-        <h2>Release Notes</h2>
-      </header>
+    <main className="prose max-w-none">
+      <section>
+        <h1>Changelog</h1>
+      </section>
       {Array.isArray(releases) &&
         releases
           .filter((release) => release?.description)
           .map((release) => (
-            <article
-              key={release?.name + "__changelog"}
-              className="prose w-full max-w-none prose-h2:text-left"
-            >
+            <section key={release?.name + "__changelog"}>
               <ReactMarkdown
                 children={release?.description}
                 components={{
@@ -45,8 +42,8 @@ export default function () {
                   },
                 }}
               />
-            </article>
+            </section>
           ))}
-    </section>
+    </main>
   );
 }

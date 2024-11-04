@@ -3,107 +3,41 @@
 @tailwind utilities;
 
 /** global styles */
-html {
-  @apply h-full cursor-default motion-safe:scroll-smooth;
-  font-family: "Montserrat Variable", Helvetica, sans-serif;
-}
-
+html,
 body {
-  @apply h-full overflow-x-hidden bg-base-100;
-}
-
-main {
-  @apply center gap-24 py-24;
-}
-
-h2 {
-  @apply gradient-text text-5xl font-extrabold tracking-tighter sm:text-8xl;
-}
-
-code {
-  @apply gradient-text;
-  font-family: "JetBrains Mono Variable", Courier, monospace;
-}
-
-a {
-  @apply transition-colors duration-200 hover:text-secondary;
-}
-
-/** image and video gradient background */
-figure:has(video),
-figure:has(img),
-p:has(img:only-child) {
-  @apply gradient-media;
-}
-
-/** container sections */
-section[id] {
-  @apply center scroll-mt-24 gap-12 px-4 sm:w-2/3;
-
-  & > header {
-    @apply center order-first gap-4;
-  }
-
-  & > header + p {
-    @apply order-first max-w-xl text-center text-2xl font-extrabold;
-  }
-}
-
-/** react root container */
-#root {
   @apply h-full;
 }
 
-/** animations */
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
+html {
+  @apply cursor-default bg-base-100 motion-safe:scroll-smooth;
+  font-family: "JetBrains Mono Variable", Courier, monospace;
 }
 
-/** components */
-@layer components {
-  .fixed-header {
-    @apply !fixed !bottom-auto top-0 !border-b-base-content/10 bg-base-100 !text-base-content;
+h1,
+h2,
+h3,
+code {
+  font-family: "Montserrat Variable", Helvetica, sans-serif;
+}
 
-    & > a > img {
-      @apply !ml-0 !scale-100;
-    }
-  }
+img,
+video {
+  @apply drop-shadow;
+}
 
-  .github-corner {
-    @apply absolute right-0 top-0 z-10;
+button,
+code {
+  @apply !rounded-none;
+}
 
-    .octo-arm,
-    &:hover .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-    }
-  }
+/** adds a hash to anchor elements */
+a:is([id], [title]) {
+  @apply before:text-muted no-underline before:content-["#_"] hover:underline hover:before:text-base-content;
+}
 
-  .gradient-media {
-    @apply relative;
-
-    &:before {
-      content: "";
-      @apply gradient-bg absolute -inset-1 block w-full origin-[50%_50%] rotate-3 rounded-2xl;
-    }
-
-    img,
-    video {
-      @apply relative w-full self-center justify-self-center rounded-xl object-cover;
-    }
-  }
+/** the main container */
+main {
+  @apply px-8 py-16 md:col-span-3;
 }
 
 /** utilities */
@@ -118,12 +52,15 @@ section[id] {
     }
   }
 
-  .gradient-bg {
-    @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  .stack-x {
+    @apply flex;
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  .stack-y {
+    @apply flex flex-col;
+  }
+
+  .text-muted {
+    @apply text-base-content/40 dark:text-base-content/20;
   }
 }

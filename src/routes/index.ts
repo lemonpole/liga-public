@@ -4,6 +4,8 @@
  * @module
  */
 import Blog from "./blog";
+import Changelog from "./changelog";
+import Features from "./features";
 import Home from "./home";
 
 /**
@@ -13,5 +15,7 @@ import Home from "./home";
  */
 export default {
   Blog,
+  Changelog,
+  Features,
   Home,
 };

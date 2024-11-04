@@ -63,6 +63,7 @@ export const Query = {
               nodes {
                 downloadUrl
                 name
+                size
               }
             }
           }

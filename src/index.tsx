@@ -9,13 +9,12 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Routes from "@liga/routes";
-import Partials from "@liga/partials";
 import { Api } from "@liga/lib";
+import { Header } from "@liga/partials";
 import {
   createHashRouter,
   Outlet,
   RouterProvider,
-  ScrollRestoration,
   useLocation,
 } from "react-router-dom";
 
@@ -30,9 +29,18 @@ const routes = createHashRouter([
         loader: Routes.Home.loader,
       },
       {
-        path: "/blog",
-        element: <Routes.Blog.Component />,
-        loader: Routes.Blog.loader,
+        path: "changelog",
+        element: <Routes.Changelog />,
+        loader: Routes.Home.loader,
+      },
+      {
+        path: "blog",
+        element: <Routes.Blog />,
+        loader: Routes.Home.loader,
+      },
+      {
+        path: "features",
+        element: <Routes.Features />,
       },
     ],
   },
@@ -54,12 +62,10 @@ function Root() {
   }, [location.hash]);
 
   return (
-    <React.Fragment>
-      <ScrollRestoration />
-      <Partials.Header />
+    <div className="w-full md:mx-auto md:grid md:w-1/2 md:grid-cols-4">
+      <Header />
       <Outlet />
-      <Partials.Footer />
-    </React.Fragment>
+    </div>
   );
 }
 

@@ -10,33 +10,27 @@ import { useLoaderData } from "react-router-dom";
 import { Api } from "@liga/lib";
 
 /**
- * The route data loader.
+ * Exports this module.
  *
- * @function
+ * @exports
  */
-function loader() {
-  const variables = Api.getRepoInfo();
-  return Api.preloadQuery(Api.Query.repository, { variables });
-}
-
-/**
- * The blog route component.
- *
- * @function
- */
-function Component() {
+export default function () {
   const { data } = useReadQuery(useLoaderData() as Api.Response["repository"]);
+
   return (
-    <main id="blog">
+    <main className="prose max-w-none">
+      <section>
+        <h1>Blog</h1>
+      </section>
       {data.repository?.discussions?.nodes?.map((discussion) => (
-        <article key={discussion?.title} className="prose px-4">
+        <section key={discussion?.title} className="py-4">
           <header>
             <p className="italic">
               {new Date(discussion?.createdAt).toLocaleString()}
             </p>
             <h1>{discussion?.title}</h1>
           </header>
-          <section>
+          <article>
             <ReactMarkdown
               children={discussion?.body}
               rehypePlugins={
@@ -54,16 +48,9 @@ function Component() {
                 },
               }}
             />
-          </section>
-        </article>
+          </article>
+        </section>
       ))}
     </main>
   );
 }
-
-/**
- * Exports this module.
- *
- * @exports
- */
-export default { Component, loader };
