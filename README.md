@@ -2,9 +2,7 @@
 
 [![Discord](https://img.shields.io/discord/1296858234853789826?style=for-the-badge&label=Join%20the%20Discord%20Server&link=https%3A%2F%2Fdiscord.gg%2FZaEwHfDD5N)](https://discord.gg/ZaEwHfDD5N)
 
-<img src="./public/favicon.svg" alt="LIGA Esports Manager" width="300" height="300" />
-
-This is the website source code for [LIGA Esports Manager](https://lemonpole.github.io/liga-public/).
+This is the website source code for [LIGA Esports Manager](https://playliga.gg).
 
 Uses the following APIs and technologies:
 

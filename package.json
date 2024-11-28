@@ -1,12 +1,12 @@
 {
-  "name": "liga-public",
+  "name": "@liga/website",
   "version": "4.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://lemonpole.github.io/liga-public/",
+  "homepage": "https://playliga.gg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lemonpole/liga-public.git"
+    "url": "https://github.com/playliga/website.git"
   },
   "scripts": {
     "dev": "vite",
