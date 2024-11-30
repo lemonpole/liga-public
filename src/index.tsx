@@ -15,6 +15,7 @@ import {
   createHashRouter,
   Outlet,
   RouterProvider,
+  ScrollRestoration,
   useLocation,
 } from "react-router-dom";
 
@@ -63,6 +64,7 @@ function Root() {
 
   return (
     <div className="w-full md:mx-auto md:grid md:w-1/2 md:grid-cols-4">
+      <ScrollRestoration />
       <Header />
       <Outlet />
     </div>
