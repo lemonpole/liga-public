@@ -3,7 +3,6 @@
  *
  * @module
  */
-import AppInfo from "package.json";
 import { graphql } from "@liga/generated";
 import { RepositoryQuery } from "@liga/generated/graphql";
 import {
@@ -100,7 +99,7 @@ export function getRepoInfo(): {
   owner: string;
   name: string;
 } {
-  const repoInfo = AppInfo.repository.url.match(
+  const repoInfo = import.meta.env.VITE_APPLICATION_REPO_URL.match(
     /(?<protocol>.+):\/\/(?<domain>.+)\/(?<owner>\w+)\/(?<name>.+)\.git/,
   );
 
